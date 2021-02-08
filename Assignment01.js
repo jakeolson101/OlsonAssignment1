@@ -5,8 +5,12 @@ let gl;
 let points;
 let colors;
 
+
 window.onload = function init()
 {
+    function getRandomArbitrary() {
+        return Math.random() * (2) + -1;
+      }
     let canvas = document.getElementById( "gl-canvas" );
 
     gl = canvas.getContext('webgl2');
@@ -20,16 +24,30 @@ window.onload = function init()
     //
     //(red, green, blue) values for all of the vertices
     colors = [
-        vec3(0.0, 1.0, 0.0),
-        vec3(0.0, 1.0, 0.0),
-        vec3(0.0, 1.0, 0.0)
+        
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random()),
+        vec3(Math.random(), Math.random(), Math.random())
+        
     ];
 
     // And, add our vertices point into our array of points
     points = [
-        vec2(-.7, -.3 ), //1st triangle
-        vec2( .7, -.3 ), 
-        vec2(-.7,  .5 ) 
+        vec2(getRandomArbitrary(), getRandomArbitrary() ), //1st triangle
+        vec2( getRandomArbitrary(), getRandomArbitrary() ), 
+        vec2(getRandomArbitrary(), getRandomArbitrary() ),
+        vec2(getRandomArbitrary(), getRandomArbitrary()), //2nd triangle
+        vec2( getRandomArbitrary(), getRandomArbitrary() ), 
+        vec2(getRandomArbitrary(),getRandomArbitrary() ),
+        vec2(getRandomArbitrary(), getRandomArbitrary()), //3rd triangle
+        vec2( getRandomArbitrary(), getRandomArbitrary() ), 
+        vec2(getRandomArbitrary(),getRandomArbitrary() )
         ];
 
     //  Configure WebGL
